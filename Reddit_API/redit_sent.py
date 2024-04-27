@@ -17,12 +17,12 @@ reddit= praw.Reddit(
 def plot1(df,title,xlabel,ylabel):
     fig, ax= plt.subplots(figsize=(8,8))
     counts = df.label.value_counts(normalize=True) * 100
-    sns.barplot (x=counts.index, y= counts , ax=ax)
+    sns.barplot (x=counts.index, y= counts , ax=ax,palette=['red', 'blue','green'])
     ax.set_xticklabels (['negative','neutral', 'positive'])
     ax.set_ylabel('percentage')
-    ax.set_title(title)  # Add title
-    ax.set_xlabel(xlabel)  # Add xlabel
-    ax.set_ylabel(ylabel)  # Add ylabel
+    ax.set_title(title)  
+    ax.set_xlabel(xlabel)  
+    ax.set_ylabel(ylabel)  
     plt.show()
 
 def csvgen(df, name_of_file):
