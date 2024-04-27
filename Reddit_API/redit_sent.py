@@ -14,12 +14,15 @@ reddit= praw.Reddit(
 )
 
 # helper functions 
-def plot1(df):
+def plot1(df,title,xlabel,ylabel):
     fig, ax= plt.subplots(figsize=(8,8))
     counts = df.label.value_counts(normalize=True) * 100
     sns.barplot (x=counts.index, y= counts , ax=ax)
     ax.set_xticklabels (['negative','neutral', 'positive'])
     ax.set_ylabel('percentage')
+    ax.set_title(title)  # Add title
+    ax.set_xlabel(xlabel)  # Add xlabel
+    ax.set_ylabel(ylabel)  # Add ylabel
     plt.show()
 
 def csvgen(df, name_of_file):
@@ -53,7 +56,8 @@ df.loc[df['compound'] < -0.2, 'label']= -1
 df2= df [['headline','label']]
 
 csvgen(df2,"reddit_hedaline_label.csv")
-plot1(df)
+S="result for "+ subreddit + " subreddit"
+plot1(df,S,"posts type","percentage")
 print("number of headline is = ", len (headlines))
 print(df.label.value_counts(normalize=True) * 100)
 
