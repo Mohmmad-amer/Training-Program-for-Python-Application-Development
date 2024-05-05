@@ -9,7 +9,8 @@ flow the folowing steps to use the project locally on your computer
 
 2) download all the requirements from the requirements.txt file by using this command
    pip install -r <path_for_requirements_file>
-    *note: make sure you have installed pip if not you can install it using
+
+*note: make sure you have installed pip if not you can install it using
 
 # Usage
 after installing all the flowing you can simply run the main, it will ask you to choose subreddit to anlayz
