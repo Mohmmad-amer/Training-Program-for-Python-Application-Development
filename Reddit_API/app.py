@@ -5,7 +5,7 @@ from api_tools import Tool
 def main():
     # connect to reddit API
     my_tool = Tool()
-    user_agent, reddit = my_tool.coonect_to_reddit()
+    USER_AGENT, REDDIT = my_tool.coonect_to_reddit()
 
     # choose Subreddit to anlayz
     subreddit = input("enter your subreddit to analys please: ")
@@ -13,7 +13,7 @@ def main():
 
     # extract all hot headlines
     headlines = set()
-    for submission in reddit.subreddit(subreddit).hot(limit=None):
+    for submission in REDDIT.subreddit(subreddit).hot(limit=None):
         headlines.add(submission.title)
 
     df = pd.DataFrame(headlines)

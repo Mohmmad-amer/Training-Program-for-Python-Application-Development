@@ -1,4 +1,5 @@
 # Sentiment analysis for Reddit
+## overview
 in this section, I have written a script that connects to Reddit API and takes all hot posts of the subreddit 
 and analyze all the posts, and sort them into positive posts, negative posts, and neutral posts. 
 
